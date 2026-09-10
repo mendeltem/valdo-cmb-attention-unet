@@ -1,8 +1,10 @@
 import nibabel as nib, numpy as np, glob, os, json, collections, sys
 from scipy import ndimage
 S = ndimage.generate_binary_structure(3,3)   # 26er-Nachbarschaft
-# Pfad zum entpackten VALDO Task2 (Ordner mit sub-*/); Vorgabe = diese Maschine.
-root = sys.argv[1] if len(sys.argv) > 1 else "/home/uchralt/data/extern/valdo2021/Task2"
+# Path to the unpacked VALDO Task 2 directory (the one holding sub-*/).
+if len(sys.argv) < 2:
+    sys.exit("usage: inventory.py <path to VALDO Task2>  (the directory holding sub-*/)")
+root = sys.argv[1]
 zeilen=[]
 for d in sorted(glob.glob(f"{root}/sub-*")):
     sid=os.path.basename(d)
