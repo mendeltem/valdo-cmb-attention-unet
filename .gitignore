@@ -1,0 +1,12 @@
+# Daten gehoeren nie ins Repo: VALDO ist CC-BY-NC-4.0 (keine Weiterverbreitung),
+# und alles andere auf dieser Maschine ist eine eigene Kohorte.
+*.nii
+*.nii.gz
+*.pt
+*.pth
+*.db
+dev/
+ergebnisse/
+logs/
+__pycache__/
+*.pyc
